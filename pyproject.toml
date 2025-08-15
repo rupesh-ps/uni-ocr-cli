@@ -1,0 +1,22 @@
+[project]
+name="uni-ocr-cli"
+version="0.1.0"
+description="UNI OCR CLI"
+requires-python=">=3.10"
+dependencies = [
+    "mistralai>=1.9.3",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.1.1",
+    "typer>=0.16.0",
+]
+
+[tool.uv]
+package = true
+
+[project.scripts]
+uni_ocr = "uni_ocr.cli:app"
+uni-ocr = "uni_ocr.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["uni_ocr*"]
+exclude = ["samples*", "ocr_out*", "ocr_out_structured*"]
